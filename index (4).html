@@ -1,0 +1,610 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyu & You | Japanese Yakiniku</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0b0a0a;
+      color: #f0e9e0;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 50px;
+      background: rgba(10, 8, 7, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: slideDown 0.8s ease;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #e4c580 0%, #f5e7c8 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo span {
+      font-size: 1rem;
+      color: #b8924c;
+      -webkit-text-fill-color: #b8924c;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #f0e0ca;
+      font-size: 1.1rem;
+      transition: 0.3s;
+      position: relative;
+    }
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #d4af37;
+      transition: 0.3s;
+    }
+    .nav-links a:hover {
+      color: #f5d792;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      min-height: 70vh;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('/IMG_20260227_163427_961.jpg') center/cover fixed;
+      border-bottom: 2px solid #c9a455;
+    }
+    .hero-content {
+      max-width: 700px;
+      padding: 0 40px;
+      animation: fadeInUp 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .hero-content .sub {
+      font-size: 1.2rem;
+      letter-spacing: 6px;
+      color: #c9a05c;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+    }
+    .hero-content h1 i {
+      color: #d4af37;
+      font-size: 3.5rem;
+      margin-right: 8px;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 35px;
+      color: #e2d4c0;
+      font-weight: 300;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 45px;
+      background: transparent;
+      border: 2px solid #d4af37;
+      color: #d4af37;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
+      border-radius: 40px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 15px rgba(212,175,55,0.2);
+    }
+    .btn:hover {
+      background: #d4af37;
+      color: #0a0806;
+      box-shadow: 0 0 30px #e6b450;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Section title */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      text-align: center;
+      margin: 70px 0 40px;
+      position: relative;
+    }
+    .section-title span {
+      background: linear-gradient(145deg, #f5e6c6, #c9a155);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 130px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #d4af37, #f7d970, #d4af37, transparent);
+      margin: 15px auto 0;
+    }
+
+    /* Menu Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin: 50px 0 40px;
+    }
+
+    .menu-card {
+      background: #1c1714;
+      border-radius: 24px;
+      padding: 30px 20px 25px;
+      text-align: center;
+      box-shadow: 0 20px 30px -8px rgba(0,0,0,0.8), 0 0 0 1px rgba(212, 175, 55, 0.2) inset;
+      transition: all 0.25s ease;
+      animation: cardPop 0.7s ease backwards;
+      border-bottom: 4px solid transparent;
+      border-image: linear-gradient(90deg, #b48b3a, #eeddaa);
+      border-image-slice: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    @keyframes cardPop {
+      0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .menu-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 45px -10px #d4af3740, 0 0 0 2px #e9c675 inset;
+    }
+
+    /* Variasi warna background per kartu */
+    .menu-card:nth-child(1) { background: linear-gradient(145deg, #1e2b24, #1d2620); }
+    .menu-card:nth-child(2) { background: linear-gradient(145deg, #2b1f28, #281e26); }
+    .menu-card:nth-child(3) { background: linear-gradient(145deg, #1f2935, #1b232f); }
+    .menu-card:nth-child(4) { background: linear-gradient(145deg, #2f2a1f, #28241b); }
+    .menu-card:nth-child(5) { background: linear-gradient(145deg, #2c1e1c, #2b1e1e); }
+    .menu-card:nth-child(6) { background: linear-gradient(145deg, #1b2b2b, #172525); }
+    .menu-card:nth-child(7) { background: linear-gradient(145deg, #2b202b, #251f29); }
+    .menu-card:nth-child(8) { background: linear-gradient(145deg, #2f281d, #2a231b); }
+    .menu-card:nth-child(9) { background: linear-gradient(145deg, #2a2a1a, #242418); }
+    .menu-card:nth-child(10) { background: linear-gradient(145deg, #2a1f2a, #241e24); }
+    .menu-card:nth-child(11) { background: linear-gradient(145deg, #1e2b2b, #1d2626); }
+    .menu-card:nth-child(12) { background: linear-gradient(145deg, #2b2b1e, #26261d); }
+    .menu-card:nth-child(13) { background: linear-gradient(145deg, #2b1e2b, #261d26); }
+
+    .menu-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #dbb45c;
+      filter: drop-shadow(0 8px 6px #00000060);
+      transition: 0.2s;
+    }
+    .menu-card:hover .menu-icon {
+      transform: rotate(5deg) scale(1.1);
+      color: #f5c96b;
+    }
+
+    .menu-card h3 {
+      font-size: 1.8rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    
+    .menu-desc {
+      font-size: 0.95rem;
+      color: #cbbda5;
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+    
+    .menu-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(130deg, #f5d791, #fff0cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 10px 0 5px;
+    }
+    
+    .menu-note {
+      font-size: 0.8rem;
+      color: #a89f8f;
+      margin-bottom: 15px;
+    }
+    
+    .badge {
+      display: inline-block;
+      background: #b28b40;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #0f0c08;
+      text-transform: uppercase;
+      margin: 5px 0 10px;
+      width: fit-content;
+    }
+
+    /* Tombol ORDER WA */
+    .order-btn {
+      background: #25D366;
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 15px;
+      width: fit-content;
+      align-self: flex-start;
+      border: 1px solid #075E54;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .order-btn:hover {
+      background: #128C7E;
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px #075E54;
+    }
+
+    /* Sides section grid */
+    .sides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 30px 0 50px;
+    }
+    
+    .side-item {
+      background: #1f1a16;
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      border-left: 6px solid #b68f4a;
+      transition: 0.3s;
+    }
+    
+    .side-item:hover {
+      transform: translateX(8px);
+      background: #2d251f;
+    }
+    
+    .side-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .side-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .side-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #e4bc6b;
+    }
+    
+    .side-desc {
+      color: #cbbda5;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0b0704;
+      padding: 40px 0;
+      margin-top: 80px;
+      border-top: 2px solid #5b4c2e;
+      text-align: center;
+      font-size: 1rem;
+      color: #ab9f8b;
+    }
+    .social-icons i {
+      font-size: 2rem;
+      margin: 20px 12px;
+      color: #7a6a48;
+      transition: 0.2s;
+    }
+    .social-icons i:hover {
+      color: #d4af37;
+      transform: scale(1.2) rotate(3deg);
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .navbar { flex-direction: column; gap: 15px; }
+      .hero-content h1 { font-size: 3.5rem; }
+      .section-title { font-size: 2.5rem; }
+    }
+    
+    .tax-note {
+      text-align: center;
+      color: #ab9f8b;
+      font-size: 0.9rem;
+      margin: 40px 0 20px;
+      padding: 15px;
+      border-top: 1px dashed #5b4c2e;
+      border-bottom: 1px dashed #5b4c2e;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">GYU & YOU</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#mains">Mains</a>
+      <a href="#sides">Sides</a>
+      <a href="#reservation">Reservation</a>
+    </div>
+    <div style="color:#b6904a;"><i class="fas fa-user-chef"></i> Japanese Yakiniku</div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="sub"><i class="fas fa-crown" style="margin-right: 8px;"></i> PREMIUM JAPANESE YAKINIKU</div>
+      <h1><i class="fas fa-utensils"></i> Gyu & You</h1>
+      <p>Experience the finest Australian and Japanese Wagyu, grilled to perfection. Every bite is a celebration of quality.</p>
+      <a href="#mains" class="btn">EXPLORE MENU <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+    </div>
+  </section>
+
+  <!-- MAINS SECTION -->
+  <div class="container" id="mains">
+    <h2 class="section-title"><span>ALA-CARTE</span> MENU</h2>
+    <h3 style="font-size: 2rem; margin-bottom: 20px; color: #e4bc6b;">MAINS</h3>
+    <div class="menu-grid">
+      <!-- Australian Wagyu MB4/5 -->
+      <div class="menu-card">
+        <div class="menu-icon"><i class="fas fa-cow"></i></div>
+        <h3>Australian Wagyu MB4/5</h3>
+        <div class="menu-desc">100g+</div>
+        <div class="menu-price">RM 78</div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Australian%20Wagyu%20MB4%2F5%20(100g%2B)%0A*Price*%3A%20RM%2078" class="order-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order via WA</a>
+      </div>
+      
+      <!-- Australian Wagyu MB8/9 -->
+      <div class="menu-card">
+        <div class="menu-icon"><i class="fas fa-cow"></i></div>
+        <h3>Australian Wagyu MB8/9</h3>
+        <div class="menu-desc">100g+</div>
+        <div class="menu-price">RM 98</div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Australian%20Wagyu%20MB8%2F9%20(100g%2B)%0A*Price*%3A%20RM%2098" class="order-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order via WA</a>
+      </div>
+      
+      <!-- Japan Miyazaki A5 Wagyu -->
+      <div class="menu-card">
+        <div class="menu-icon"><i class="fas fa-crown"></i></div>
+        <h3>Japan Miyazaki A5 Wagyu</h3>
+        <div class="menu-desc">100g+</div>
+        <div class="menu-price">RM 128</div>
+        <div class="menu-note">Choice of sauce: Signature Steak Sauce, Garlic White Sauce, Black Pepper Sauce</div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Japan%20Miyazaki%20A5%20Wagyu%20(100g%2B)%0A*Price*%3A%20RM%20128%0A*Note*%3A%20Choice%20of%20sauce%3A%20Signature%20Steak%20Sauce%2C%20Garlic%20White%20Sauce%2C%20Black%20Pepper%20Sauce" class="order-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order via WA</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDES SECTION -->
+  <div class="container" id="sides">
+    <h3 style="font-size: 2rem; margin: 40px 0 20px; color: #e4bc6b;">SIDES (add-ons)</h3>
+    <div class="sides-grid">
+      <!-- Tuscan Kale Salad -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">Tuscan Kale Salad</span>
+          <span class="side-price">RM 15</span>
+        </div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Tuscan%20Kale%20Salad%0A*Price*%3A%20RM%2015" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+      
+      <!-- Foie Gras Sandwich -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">Foie Gras Sandwich</span>
+          <span class="side-price">RM 48</span>
+        </div>
+        <div class="side-desc">w. Berry Sauce</div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Foie%20Gras%20Sandwich%20w.%20Berry%20Sauce%0A*Price*%3A%20RM%2048" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+      
+      <!-- Grilled Japanese White Pearl Corn -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">Grilled Japanese White Pearl Corn</span>
+          <span class="side-price">RM 18</span>
+        </div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Grilled%20Japanese%20White%20Pearl%20Corn%0A*Price*%3A%20RM%2018" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+      
+      <!-- Caramelized Grilled Pineapple Rings -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">Caramelized Grilled Pineapple Rings</span>
+          <span class="side-price">RM 12</span>
+        </div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Caramelized%20Grilled%20Pineapple%20Rings%0A*Price*%3A%20RM%2012" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+      
+      <!-- Grilled King Salmon w. Miso -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">Grilled King Salmon w. Miso</span>
+          <span class="side-price">RM 88</span>
+        </div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Grilled%20King%20Salmon%20w.%20Miso%0A*Price*%3A%20RM%2088" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+      
+      <!-- Smashed Hamburg Steak -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">Smashed Hamburg Steak</span>
+          <span class="side-price">RM 48</span>
+        </div>
+        <div class="side-desc">2 pcs per set</div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Smashed%20Hamburg%20Steak%20(2%20pcs)%0A*Price*%3A%20RM%2048" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+      
+      <!-- Frenched Lamb Racks -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">Frenched Lamb Racks</span>
+          <span class="side-price">RM 48</span>
+        </div>
+        <div class="side-desc">3pcs</div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Frenched%20Lamb%20Racks%20(3pcs)%0A*Price*%3A%20RM%2048" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+      
+      <!-- A5 Wagyu Bolognese Spaghetti -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">A5 Wagyu Bolognese Spaghetti</span>
+          <span class="side-price">RM 38</span>
+        </div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20A5%20Wagyu%20Bolognese%20Spaghetti%0A*Price*%3A%20RM%2038" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+      
+      <!-- A5 Wagyu Gyoza -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">A5 Wagyu Gyoza</span>
+          <span class="side-price">RM 15</span>
+        </div>
+        <div class="side-desc">5pcs</div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20A5%20Wagyu%20Gyoza%20(5pcs)%0A*Price*%3A%20RM%2015" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+      
+      <!-- A5 Wagyu Skewer -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">A5 Wagyu Skewer</span>
+          <span class="side-price">RM 15</span>
+        </div>
+        <div class="side-desc">1 stick</div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20A5%20Wagyu%20Skewer%20(1%20stick)%0A*Price*%3A%20RM%2015" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+      
+      <!-- Paris Mash -->
+      <div class="side-item">
+        <div class="side-header">
+          <span class="side-name">Paris Mash</span>
+          <span class="side-price">RM 12</span>
+        </div>
+        <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0A*Menu*%3A%20Paris%20Mash%0A*Price*%3A%20RM%2012" class="order-btn" target="_blank" style="margin-top: 10px; padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Order</a>
+      </div>
+    </div>
+    
+    <!-- Tax Note -->
+    <div class="tax-note">
+      All prices are subjected to 10% service charge & 6% SST<br>
+      You can order your preferred dishes in ala carte
+    </div>
+  </div>
+
+  <!-- RESERVATION -->
+  <div class="container" id="reservation" style="text-align: center; margin: 60px 0;">
+    <h2 style="font-size: 2.8rem; font-family: 'Playfair Display';">Ready for an <span class="gold">unforgettable</span> experience?</h2>
+    <a href="https://wa.me/60126271582?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation%20at%20Gyu%20%26%20You" class="btn" style="margin-top: 30px; padding: 18px 70px; font-size: 1.3rem;" target="_blank"><i class="fab fa-whatsapp"></i> RESERVE VIA WA</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="logo" style="font-size: 2.5rem; margin-bottom: 15px;">GYU & YOU</div>
+      <p style="margin-bottom: 10px;">Kuala Lumpur, Malaysia — +60 12-627 1582</p>
+      <div class="social-icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-x-twitter"></i>
+        <i class="fab fa-tiktok"></i>
+      </div>
+      <p style="margin-top: 30px; font-size: 0.9rem;">© 2025 Gyu & You — Pure flavor in every layer.</p>
+    </div>
+  </footer>
+</body>
+</html>
